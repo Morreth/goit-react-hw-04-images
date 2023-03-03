@@ -1,5 +1,3 @@
-
-
 import { useState, useEffect } from 'react';
 import Searchbar from './Searchbar';
 import ImageGallery from './ImageGallery';
