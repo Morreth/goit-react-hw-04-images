@@ -7,7 +7,7 @@ import LoadMore from 'components/LoadMore';
 import Modal from 'components/Modal';
 import Loader from 'components/Loader';
 
-const ImageGallery = ({images, onLoadMore}) => {
+const ImageGallery = ({images, onLoadMore, imagesLoading}) => {
  const [showModal, setShowModal] = useState(false);
   const [modalImages, setModalImages] = useState('');
   const [tags, setTags] = useState('');
@@ -40,7 +40,7 @@ const ImageGallery = ({images, onLoadMore}) => {
             />
           ))}
         </ImageGalleryList>
-        {images.length > 11 && <LoadMore onClick={onLoadMore} />}
+        {images.length > 11 && <LoadMore onClick={onLoadMore} isLoading={isLoading || imagesLoading} />}
         {showModal && (
           <Modal onClose={toggleModal}>
             <img src={modalImages} alt={tags} />

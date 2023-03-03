@@ -77,7 +77,7 @@ const App = () => {
         
         {error && <p>{error}</p>}
         {images.length !== 0 && (
-          <ImageGallery images={images} onLoadMore={loadMore} />
+          <ImageGallery images={images} onLoadMore={loadMore} imagesLoading = {isLoading}/>
         )}
         <ToastContainer autoClose={3000} />
       </MainApp>
